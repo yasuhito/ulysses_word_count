@@ -1,4 +1,5 @@
 task default: :rubocop
+task travis: :rubocop
 
 begin
   require 'rubocop/rake_task'
