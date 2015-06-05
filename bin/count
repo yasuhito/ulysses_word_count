@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+File.open(File.expand_path('~/Dropbox/ulysses_word_count.txt'), 'w') do |f|
+  nchars = ARGV.map do |each|
+    io = File.open(each, 'r')
+    io.set_encoding('UTF-8')
+    io.read.length
+  end.inject(&:+)
+  f.puts nchars
+end
